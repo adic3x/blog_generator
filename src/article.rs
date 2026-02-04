@@ -85,7 +85,7 @@ mod tests {
 
     #[test]
     fn test_article_parsing() {
-        let cases = [
+        [
             ("1674547200 My First Post\nContent here", Some((1674547200, "My First Post", Some("Content here")))),
             ("999 Header Only\nBody with \n newlines", Some((999,        "Header Only",   Some("Body with \n newlines")))),
             ("777 Non ascїї\nNon ascїї",               Some((777,        "Non ascїї",     Some("Non ascїї")))),
@@ -96,9 +96,7 @@ mod tests {
             ("123 \nNo Name",                          None),
             ("123      \nNo Name",                     None),
             ("123 NoNewline",                          None),
-        ];
-
-        cases.into_iter().enumerate().for_each(|(i, (input, expected))| {
+        ].into_iter().enumerate().for_each(|(i, (input, expected))| {
             let result = Article::new(input.to_string());
 
             match (&result, expected) {
@@ -109,7 +107,7 @@ mod tests {
         });
     }
 
-        #[test]
+    #[test]
     fn test_datetime_formatting() {
         assert_eq!(&format!("{}", Datetime(1770203100)), "04 feb 2026")
     }

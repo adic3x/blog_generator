@@ -1,3 +1,8 @@
+;; Copyright (c) 2023 Airbus CERT
+;; Source: https://github.com/airbus-cert/tree-sitter-powershell (original file)
+;; License: MIT — full text included in licenses/tree-sitter-powershell.MIT.txt
+;; This file is distributed under the MIT License.
+
 ;; https://github.com/airbus-cert/tree-sitter-powershell/blob/main/queries/highlights.scm
 "param" @keyword
 "dynamicparam" @keyword

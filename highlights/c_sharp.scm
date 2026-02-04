@@ -1,3 +1,8 @@
+;; Copyright (c) 2014-2023 Max Brunsfeld, Damien Guard, Amaan Qureshi, and contributors
+;; Source: https://github.com/tree-sitter/tree-sitter-c-sharp (original file)
+;; License: MIT — full text included in licenses/tree-sitter-c-sharp.MIT.txt
+;; This file is distributed under the MIT License.
+
 ;; https://github.com/tree-sitter/tree-sitter-c-sharp/blob/master/queries/highlights.scm
 (identifier) @variable
 

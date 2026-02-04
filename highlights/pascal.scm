@@ -1,3 +1,8 @@
+;; Copyright (c) 2018 Benjamin Gray
+;; Source: https://github.com/Isopod/tree-sitter-pascal (original file)
+;; License: MIT — full text included in licenses/tree-sitter-pascal.MIT.txt
+;; This file is distributed under the MIT License.
+
 ;; https://github.com/Isopod/tree-sitter-pascal/blob/master/queries/highlights.scm
 ; -- Keywords
 [

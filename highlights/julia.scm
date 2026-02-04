@@ -1,3 +1,8 @@
+;; Copyright (c) 2018 Max Brunsfeld, GitHub
+;; Source: https://github.com/tree-sitter/tree-sitter-julia (original file)
+;; License: MIT — full text included in licenses/tree-sitter-julia.MIT.txt
+;; This file is distributed under the MIT License.
+
 ;; https://github.com/tree-sitter/tree-sitter-julia/blob/master/queries/highlights.scm
 ; Identifiers
 (identifier) @variable

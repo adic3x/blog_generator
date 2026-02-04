@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ sitename }}</title>
+        {{ head|safe }}
+    </head>
+    <body>
+        {{ header|safe }}
+        <main>
+            {{ intro|safe }}
+            {% for (article, path) in articles %}
+                <time>{{ article.ts }}</time>
+                <h2><a href="./{{ path }}">{{ article.name() }}</a></h2>
+            {% endfor %}
+        </main>
+        {{ footer|safe }}
+    </body>
+</html>

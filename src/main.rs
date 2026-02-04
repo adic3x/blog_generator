@@ -78,7 +78,7 @@ fn main() {
     let head   = load_asset(&cfg.assets, "head.html", true);
     let header = load_asset(&cfg.assets, "header.html", true);
     let footer = load_asset(&cfg.assets, "footer.html", true);
-    let intro = load_asset(&cfg.assets, "intro.md", false);
+    let intro  = load_asset(&cfg.assets, "intro.md", false);
 
     std::fs::create_dir_all(&cfg.output).unwrap_or_else(|e| die!("Error: can't open output directory {:?} - {e}", cfg.output));
 

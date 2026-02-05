@@ -107,7 +107,7 @@ fn main() {
         .collect::<Vec<_>>();
 
     if articles.len() == 0 {
-        die!("Error: no articles found.");
+        die!("Error: no articles found");
     }
 
     let mut sorted = articles.iter().collect::<Vec<_>>();
@@ -122,7 +122,7 @@ fn main() {
         intro:    markdown::Markdown(&intro),
     });
 
-    println!("Done: {} indexed, {} parsed, index generated.", articles.len(), articles.iter().filter(|v| v.0.body().is_some()).count());
+    println!("Done: {} indexed, {} parsed, index generated", articles.len(), articles.iter().filter(|v| v.0.body().is_some()).count());
 }
 
 fn load_asset(dir: &PathBuf, path: &str, html: bool) -> String {
@@ -137,8 +137,8 @@ fn load_asset(dir: &PathBuf, path: &str, html: bool) -> String {
 
     let src = dir.join(path);
     match if html { load_html(src) } else { std::fs::read_to_string(src) } {
-        Ok(s) => { println!("Info: \"{path}\" loaded."); s },
-        Err(e) => { println!("Warning: \"{path}\" - {e}. Empty value is used."); String::new() },
+        Ok(s) => { println!("Info: \"{path}\" loaded"); s },
+        Err(e) => { println!("Warning: \"{path}\" - {e}. Empty value is used"); String::new() },
     }
 }
 
@@ -158,7 +158,7 @@ fn load_dir(path: &PathBuf) -> Result<Vec<(String, PathBuf)>, std::io::Error> {
         {
             result.push((format!("{dst}.html"), src));
         } else {
-            println!("Warning: {src:?} - isn't \"ascii_alphanumeric_lowercase.md\", ignored.");
+            println!("Warning: {src:?} - isn't \"ascii_alphanumeric_lowercase.md\", ignored");
         }
     }
 

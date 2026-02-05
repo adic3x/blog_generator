@@ -67,6 +67,7 @@ pub struct IndexTemplate<'a> {
 }
 
 fn main() {
+    let time = std::time::Instant::now();
     let cfg = Config::parse();
 
     println!("{} v{}\nUse '--help' for more information.", env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"));
@@ -122,7 +123,12 @@ fn main() {
         intro:    markdown::Markdown(&intro),
     });
 
-    println!("Done: {} indexed, {} parsed, index generated", articles.len(), articles.iter().filter(|v| v.0.body().is_some()).count());
+    println!(
+        "Done in {:.2} seconds: {} indexed, {} parsed, index generated",
+        time.elapsed().as_secs_f64(),
+        articles.len(),
+        articles.iter().filter(|v| v.0.body().is_some()).count(),
+    );
 }
 
 fn load_asset(dir: &PathBuf, path: &str, html: bool) -> String {

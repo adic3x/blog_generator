@@ -6,9 +6,11 @@
         {{ head|safe }}
     </head>
     <body>
-        {{ header|safe }}
-        <header><h1>{{ title }}</h1></header>
-        <main>{{ content|safe }}</main>
-        {{ footer|safe }}
+        <header>{{ header|safe }}</header>
+        <main>
+            <h1>{{ title }}</h1>
+            {{ content|safe }}
+        </main>
+        <footer>{{ footer|safe }}</footer>
     </body>
 </html>

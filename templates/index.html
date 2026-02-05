@@ -6,7 +6,7 @@
         {{ head|safe }}
     </head>
     <body>
-        {{ header|safe }}
+        <header>{{ header|safe }}</header>
         <main>
             {{ intro|safe }}
             {% for (article, path) in articles %}
@@ -14,6 +14,6 @@
                 <h2><a href="./{{ path }}">{{ article.name() }}</a></h2>
             {% endfor %}
         </main>
-        {{ footer|safe }}
+        <footer>{{ footer|safe }}</footer>
     </body>
 </html>

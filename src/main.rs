@@ -51,6 +51,7 @@ pub struct ArticleTemplate<'a> {
     pub head:     &'a str,
     pub header:   &'a str,
     pub footer:   &'a str,
+    pub ts:       article::Datetime,
     pub content:  markdown::Markdown<'a>,
 }
 
@@ -98,6 +99,7 @@ fn main() {
                     head:     &head,
                     header:   &header,
                     footer:   &footer,
+                    ts:       article.ts,
                     content:  markdown::Markdown(body),
                 }),
                 None => println!("Info: ignored {path:?}"),

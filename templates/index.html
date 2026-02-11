@@ -9,10 +9,11 @@
         <header>{{ header|safe }}</header>
         <main>
             {{ intro|safe }}
-            {% for (article, path) in articles %}
-                <time>{{ article.ts }}</time>
-                <h2><a href="./{{ path }}">{{ article.name() }}</a></h2>
-            {% endfor %}
+            <ul class="table-of-content">
+                {% for (article, path) in articles %}
+                    <li><a href="./{{ path }}">{{ article.name() }}</a> <time>{{ article.ts }}</time></li>
+                {% endfor %}
+            </ul>
         </main>
         <footer>{{ footer|safe }}</footer>
     </body>

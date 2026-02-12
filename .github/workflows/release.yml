@@ -22,7 +22,7 @@ jobs:
           
       - name: Prepare Artifact
         run: |
-          cp target/release/blog_engine ./blog_engine_linux
+          cp target/release/blog_generator ./blog_generator_linux
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
@@ -32,6 +32,6 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            ./blog_engine_linux
+            ./blog_generator_linux
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,37 @@
+name: Build and Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build Release Binary
+        run: |
+          cargo build --release
+          
+      - name: Prepare Artifact
+        run: |
+          cp target/release/blog_engine ./blog_engine_linux
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: manual-${{ github.run_number }}
+          name: Manual Release ${{ github.run_number }}
+          draft: false
+          prerelease: false
+          files: |
+            ./blog_engine_linux
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

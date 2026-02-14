@@ -32,7 +32,7 @@ struct Config {
     output: PathBuf,
 
     /// Path to the directory with static assets,
-    /// expected "head.html", "header.html" and "footer.html"
+    /// expected "head.html", "header.html", "footer.html" and intro.md
     #[arg(short, long, default_value = "assets")]
     assets: PathBuf,
 
